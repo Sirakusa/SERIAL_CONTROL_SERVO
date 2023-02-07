@@ -5,5 +5,17 @@
 
 int main(void)
 {
-    send_data *buffer1 = new send_data();
+    while(true){
+
+        send_data *buffer1 = new send_data();
+
+        int buf;
+
+        buffer1 -> buffer();
+
+        buf = buffer1 -> get_data_buffer();
+
+        delete buffer1;
+
+    }
 } 
