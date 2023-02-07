@@ -10,8 +10,8 @@ class send_data{
         send_data(void);
 
     private:
-        char *_c, _buffer[3];
-        int _i, _motor_value;
+        char _buffer[3];
+        int _motor_value;
 };
 
 #endif
