@@ -20,6 +20,7 @@ void send_data::buffer(){
         }
 }
 
-int send_data::get_data_buffer(){
+float send_data::get_data_buffer(){
+    _motor_value = float(_motor_value)
     return _motor_value;
 }

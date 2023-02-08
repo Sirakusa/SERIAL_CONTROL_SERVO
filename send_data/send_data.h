@@ -11,7 +11,7 @@ class send_data{
 
     private:
         char _buffer[3];
-        int _motor_value;
+        float _motor_value;
 };
 
 #endif
