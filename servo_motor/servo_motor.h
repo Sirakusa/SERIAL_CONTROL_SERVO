@@ -7,10 +7,11 @@ class servo_motor{
     public:
         servo_motor(float duty_cicle);
         float get_status_motor(void); 
-        void move_motor(void);
+        void move_motor(float duty_cicle,int shift);
 
     private:
         float _duty_cicle;
+        enum shift{LEFT,RIGTH};
 };
 
 #endif

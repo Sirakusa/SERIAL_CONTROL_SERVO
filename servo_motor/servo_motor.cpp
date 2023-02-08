@@ -7,17 +7,26 @@ servo_motor::servo_motor(float duty_cicle){
     _duty_cicle = duty_cicle;
 }
 
-void servo_motor::move_motor(){
-    motor.write(_duty_cicle);
+void servo_motor::move_motor(float duty_cicle,int s){
+
+    _duty_cicle = duty_cicle;
+
+    if (s == RIGTH) {
+        for (float i = _duty_cicle; i <= 1; i += 0.1) {
+            motor.write(i);
+            ThisThread::sleep_for(100ms);
+        }
+    }
+
+    if (s == LEFT) {
+        for (float i = _duty_cicle; i >= 0; i -= 0.1) {
+            motor.write(i);
+            ThisThread::sleep_for(100ms);
+        }
+    }
 }
+
 
 float servo_motor::get_status_motor(){
     return motor.read();
 }
-
-
-// modificar el argumento para poder cambiar el periodo en 
-// la funcion move_motor()
-
-// crear una funcion miembro llada get_duty_cicle()
-// que retorne read()
