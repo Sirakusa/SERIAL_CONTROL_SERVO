@@ -1,16 +1,18 @@
 #include "mbed.h"
 #include "servo_motor.h"
 
+static PwmOut motor(PA_15);
 
-servo_motor::servo_motor(float duty_cicle,PinName pin){
+servo_motor::servo_motor(float duty_cicle){
     _duty_cicle = duty_cicle;
-    _pin = pin;
-    PwmOut motor(PinName _pin);
 }
 
-void servo_motor::move_motor(void){
+void servo_motor::move_motor(){
+    motor.write(_duty_cicle);
+}
 
-
+float servo_motor::get_status_motor(){
+    return motor.read();
 }
 
 
