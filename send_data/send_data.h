@@ -5,13 +5,14 @@
 
 class send_data{
     public:
-        int get_data_buffer(void);
+        float get_data_buffer(void);
         void buffer(void);
         send_data(void);
 
     private:
         char _buffer[3];
-        float _motor_value;
+        int _motor_value;
+        enum shift{LEFT,RIGTH};
 };
 
 #endif
