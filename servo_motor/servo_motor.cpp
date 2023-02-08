@@ -3,8 +3,8 @@
 
 static PwmOut motor(PA_15);
 
-servo_motor::servo_motor(float duty_cicle){
-    _duty_cicle = duty_cicle;
+servo_motor::servo_motor(){
+    _duty_cicle = 0.0f;
 }
 
 void servo_motor::move_motor(float duty_cicle,int s){
@@ -17,7 +17,6 @@ void servo_motor::move_motor(float duty_cicle,int s){
             ThisThread::sleep_for(100ms);
         }
     }
-
     if (s == LEFT) {
         for (float i = _duty_cicle; i >= 0; i -= 0.1) {
             motor.write(i);

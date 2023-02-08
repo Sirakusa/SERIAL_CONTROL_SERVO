@@ -5,7 +5,7 @@
 
 class servo_motor{
     public:
-        servo_motor(float duty_cicle);
+        servo_motor(void);
         float get_status_motor(void); 
         void move_motor(float duty_cicle,int shift);
 
